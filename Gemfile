@@ -18,6 +18,7 @@ gem 'responders', '~> 2.0'
 gem 'bootstrap-sass', '~> 3.3.4'
 
 gem 'rails_12factor', group: :production
+gem 'thin', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
