@@ -1,0 +1,68 @@
+<% totalNum = @numbers.length  
+   colSize = totalNum / 3 
+   
+
+%> 
+  <div class="col-xs-4">
+    <table class="table table-condensed table-striped"> 
+      <thead>
+        <tr> 
+          <td width="100">Name</td>
+          <td width="40">#</td>
+          <td>Number</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @numbers[1..colSize].each do |number| %>
+          <tr>  
+            <td><%= number[:name].humanize %></p></td>
+            <td><%= number[:emp_no] %></p></td>
+            <td><%= number[:phone_no] %></p></td>
+          </tr>
+        <% end %> 
+      </tbody>
+      </thead>
+    </table>
+  </div>
+  <div class="col-xs-4">
+    <table class="table table-condensed table-striped"> 
+      <thead>
+        <tr> 
+          <td width="100">Name</td>
+          <td width="40">#</td>
+          <td>Number</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @numbers[(colSize + 1)..(colSize + colSize)].each do |number| %>
+          <tr>  
+            <td><%= number[:name].humanize %></p></td>
+            <td><%= number[:emp_no] %></p></td>
+            <td><%= number[:phone_no] %></p></td>
+          </tr>
+        <% end %> 
+      </tbody>
+      </thead>
+    </table>
+  </div>
+  <div class="col-xs-4">
+    <table class="table table-condensed table-striped"> 
+      <thead>
+        <tr> 
+          <td width="100">Name</td>
+          <td width="40">#</td>
+          <td>Number</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @numbers[(colSize + colSize + 1)..totalNum].each do |number| %>
+          <tr>  
+            <td><%= number[:name].humanize %></p></td>
+            <td><%= number[:emp_no] %></p></td>
+            <td><%= number[:phone_no] %></p></td>
+          </tr>
+        <% end %> 
+      </tbody>
+      </thead>
+    </table>
+  </div>
