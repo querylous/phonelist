@@ -1,0 +1,10 @@
+$("#help").click(function() {
+  $(this).append('\
+  <ol>\
+   <li>Go to Altametrics/elabor, and select People Management > eHR > Reports > Phone number list.</li>\
+   <li>Click Generate CSV as shown here:<%= image_tag("how_to_csv.png") %></li>\
+   <li>Save the file someplace memorable</li>\
+   <li>Finally, click the Browse button, and select the file you saved. Click Convert CSV, then print the result.</li>\
+  </ol>');
+});
+
