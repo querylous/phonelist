@@ -9,68 +9,9 @@
        number[:phone_no] = num.to_s[0..2] + "-" + num.to_s[3..6]
      end
    end
-
 %> 
-  <div class="col-xs-4">
-    <table class="table table-condensed table-striped"> 
-      <thead>
-        <tr> 
-          <td width="100">Name</td>
-          <td width="40">#</td>
-          <td>Number</td>
-        </tr>
-      </thead>
-      <tbody>
-        <% @numbers[1..colSize].each do |number| %>
-          <tr>  
-            <td><%= number[:name].humanize %></p></td>
-            <td><%= number[:emp_no] %></p></td>
-            <td><%= number[:phone_no] %></p></td>
-          </tr>
-        <% end %> 
-      </tbody>
-      </thead>
-    </table>
-  </div>
-  <div class="col-xs-4">
-    <table class="table table-condensed table-striped"> 
-      <thead>
-        <tr> 
-          <td width="100">Name</td>
-          <td width="40">#</td>
-          <td>Number</td>
-        </tr>
-      </thead>
-      <tbody>
-        <% @numbers[(colSize + 1)..(colSize + colSize)].each do |number| %>
-          <tr>  
-            <td><%= number[:name].humanize %></p></td>
-            <td><%= number[:emp_no] %></p></td>
-            <td><%= number[:phone_no] %></p></td>
-          </tr>
-        <% end %> 
-      </tbody>
-      </thead>
-    </table>
-  </div>
-  <div class="col-xs-4">
-    <table class="table table-condensed table-striped"> 
-      <thead>
-        <tr> 
-          <td width="100">Name</td>
-          <td width="40">#</td>
-          <td>Number</td>
-        </tr>
-      </thead>
-      <tbody>
-        <% @numbers[(colSize + colSize + 1)..totalNum].each do |number| %>
-          <tr>  
-            <td><%= number[:name].humanize %></p></td>
-            <td><%= number[:emp_no] %></p></td>
-            <td><%= number[:phone_no] %></p></td>
-          </tr>
-        <% end %> 
-      </tbody>
-      </thead>
-    </table>
-  </div>
+
+<%= render partial: 'phonelist/table', locals: { numbers: @numbers[1..colSize]  } %> 
+<%= render partial: 'phonelist/table', locals: { numbers: @numbers[(colSize + 1)..(colSize + colSize)]  } %> 
+<%= render partial: 'phonelist/table', locals: { numbers: @numbers[(colSize + colSize + 1)..totalNum]  } %> 
+        
