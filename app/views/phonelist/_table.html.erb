@@ -4,15 +4,15 @@
       <tr> 
         <td width="100">Name</td>
         <td width="40">#</td>
-        <td>Number</td>
+        <td width="70">Number</td>
       </tr>
     </thead>
     <tbody>
       <% numbers.each do |number| %> 
         <tr>  
-          <td><%= number[:name].humanize %></p></td>
-          <td><%= number[:emp_no] %></p></td>
-          <td><%= number[:phone_no] %></p></td>
+          <td width="100"><%= number[:name].humanize %></p></td>
+          <td width="40"><%= number[:emp_no] %></p></td>
+          <td width="100"><%= number[:phone_no] %></p></td>
         </tr>
       <% end %> 
     </tbody>
