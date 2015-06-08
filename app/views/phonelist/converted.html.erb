@@ -1,6 +1,14 @@
 <% totalNum = @numbers.length  
    colSize = totalNum / 3 
    
+   @numbers.each do |number|
+     num = number[:phone_no]
+     if num.to_s.length == 10
+       number[:phone_no] = num.to_s[0..2] + "-" + num.to_s[3..5] + "-" + num.to_s[6..9]
+     elsif num.to_s.length == 7
+       number[:phone_no] = num.to_s[0..2] + "-" + num.to_s[3..6]
+     end
+   end
 
 %> 
   <div class="col-xs-4">
